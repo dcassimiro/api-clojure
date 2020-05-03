@@ -5,14 +5,25 @@
             [ring.middleware.json :as json]
             [ring.util.response :refer [response]]
             [api.github :refer :all]
+            [api.query :refer :all]
             ))
 
 (defroutes app-routes
-           (GET "/repos/:user" [user]
+           (GET "/api/users" []
+             (response (get-all-users)))
+
+           (GET "/api/repos" []
+             (response (get-all-repos)))
+
+           (GET "/api/repos/:user" [user]
              (response (get-repos user)))
 
-           (GET "/repo/:owner/:repo" [owner repo]
+           (GET "/api/repos/:owner/:repo" [owner repo]
              (response (get-repo owner repo)))
+
+           ;@ToDO
+           ;(GET "/api/repos/userid/:id" [id]
+           ;  (response (get-repo-by-user-id (Integer/parseInt id))))
 
            (route/resources "/")
            (route/not-found "Not Found"))

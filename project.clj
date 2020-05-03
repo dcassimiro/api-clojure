@@ -7,10 +7,10 @@
                  [clj-http "3.10.1"]
                  [ring/ring-core "1.6.0-beta7"]
                  [ring/ring-json "0.3.1"]
-                 [korma "0.3.0-RC5"]
-                 [mysql/mysql-connector-java "5.1.6"]
                  [ring/ring-defaults "0.2.1"]
-                 [cheshire "5.10.0"]]
+                 [cheshire "5.10.0"]
+                 [korma "0.3.0-RC5"]
+                 [org.xerial/sqlite-jdbc "3.23.1"]]
   :plugins [[lein-ring "0.12.5"]]
   :ring {:handler api.handler/app}
   :profiles
