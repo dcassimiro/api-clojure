@@ -17,8 +17,9 @@ Server will start at port 3000
 
 Endpoints available:
 
-GET /repos/:user
-GET /repo/:user/:repo
+GET /api/repos/:user
+
+GET /api/repos/:user/:repo
 
 
 

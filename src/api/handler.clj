@@ -8,10 +8,10 @@
             ))
 
 (defroutes app-routes
-           (GET "/repos/:user" [user]
+           (GET "/api/repos/:user" [user]
              (response (get-repos user)))
 
-           (GET "/repo/:owner/:repo" [owner repo]
+           (GET "/api/repos/:owner/:repo" [owner repo]
              (response (get-repo owner repo)))
 
            (route/resources "/")
